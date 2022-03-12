@@ -6,6 +6,7 @@ const sendEmail =require("../utils/sendEmail");
 const crypto = require ("crypto");
 
 
+
 // Register 
 
 exports.registerUser = catchAsyncErrors(async(req,res,next)=>
@@ -140,3 +141,43 @@ exports .getUserDetails = catchAsyncErrors(async(req,res,next)=>
 });
 
 // Change User PassWord
+exports.updatePassword =catchAsyncErrors(async(req,res,next)=>{
+    const user = await User.findById(req.user.id).select("+password");
+    const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
+
+    if (!isPasswordMatched){
+        return next(new ErrorHander("Old password incorrect", 400));
+    }
+     if(req.body.newPassword !==req.body.confirmPassword){
+         return next(new ErrorHander("password not match",400));
+     }
+
+     user.password = req.body.newPassword;
+
+    await user.save();
+    sendToken(user,200,res);
+
+});
+
+// Update User Profile
+exports.updateProfile =catchAsyncErrors(async(req,res,next)=>{
+   
+    const newUserProfile = {
+        name: req.body.name,
+       // email: req.body.email,
+    };
+
+    // I will add cloudinary later
+         const user = await User.findByIdAndUpdate(req.user.id, newUserProfile,{
+             new: true,
+             runValidators: true,
+           
+         });
+
+    res.status(200).json({
+        sussecc:true,
+        user:`New User Name is: ${req.body.name}`,
+       
+    })
+
+});

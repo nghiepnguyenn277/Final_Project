@@ -7,6 +7,8 @@ const
     forgotPassword,
     resetPassword,
     getUserDetails,
+    updatePassword,
+    updateProfile,
 } =require("../controllers/userController");
 const {isAuthenticateUser, authorizeRoles} = require("../middleware/auth")
 const router = express.Router();
@@ -19,8 +21,15 @@ router.route("/logout").get(Logout);
 router.route("/password/forgot").post(forgotPassword);
 router.route("/password/reset/:token").put(resetPassword);
 
-// see infomation
- router.route("/infomation").get(isAuthenticateUser, getUserDetails)
+// see Profile
+ router.route("/profile").get(isAuthenticateUser, getUserDetails)
+
+// change Profile
+router.route("/profile/update").put(isAuthenticateUser,updateProfile);
+
+
+// change password
+router.route("/password/changepassword").put(isAuthenticateUser,updatePassword);
 
 
 module.exports =  router;
