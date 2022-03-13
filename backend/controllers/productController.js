@@ -2,7 +2,8 @@ const res = require("express/lib/response");
 const Product =require("../models/productModel");
 const ErrorHander = require("../utils/errorhander");
 const catchAsyncErrors =require("../middleware/catchAsyncErrors");
-const ApiFeatures = require("../utils/apifeatures")
+const ApiFeatures = require("../utils/apifeatures");
+const { query } = require("express");
 //Create Product -- For Admin 
 exports.createProduct= catchAsyncErrors(async(req,res,next) => {
     
@@ -41,7 +42,7 @@ exports.getProductDetails = catchAsyncErrors(async(req,res,next)=>{
     const product = await Product.findById(req.params.id);
 
     if(!product){
-       return  next(new ErrorHander("Product no found",404));
+       return  next(new ErrorHander("Product not found",404));
     }
     res.status(200).json({
         success:true,
@@ -55,7 +56,7 @@ exports.updateProduct =catchAsyncErrors(async (req,res,next)=>{
     let product = Product.findById(req.params.id);
 
     if(!product){
-        return  next(new ErrorHander("Product no found",404));
+        return  next(new ErrorHander("Product not found",404));
      }
 
     product = await Product.findByIdAndUpdate(req.params.id,req.body,{
@@ -74,7 +75,7 @@ exports.updateProduct =catchAsyncErrors(async (req,res,next)=>{
      
     const product = await Product.findById(req.params.id);
      if(!product){
-       return  next(new ErrorHander("Product no found",404));
+       return  next(new ErrorHander("Product not found",404));
     }
 
      await product.remove();
@@ -127,5 +128,16 @@ exports.updateProduct =catchAsyncErrors(async (req,res,next)=>{
         res.status(200).json({
             success:true,
         });
+ });
 
+ // Get All Reviews
+ exports.getAllReviews =catchAsyncErrors(async(req,res,next)=>{
+        const product = await Product.findById(req.query.id);
+        if(!product){
+            return next(new ErrorHander("Product not found",404))
+        };
+        res.status(200).json({
+            success:true,
+            reviews: product.reviews,
+        })
  });
