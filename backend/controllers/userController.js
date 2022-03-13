@@ -164,13 +164,14 @@ exports.updateProfile =catchAsyncErrors(async(req,res,next)=>{
    
     const newUserProfile = {
         name: req.body.name,
-       // email: req.body.email,
+     // email: req.body.email,
     };
 
     // I will add cloudinary later
          const user = await User.findByIdAndUpdate(req.user.id, newUserProfile,{
              new: true,
              runValidators: true,
+        //   useFindAndModify: false,
            
          });
 
@@ -180,4 +181,69 @@ exports.updateProfile =catchAsyncErrors(async(req,res,next)=>{
        
     })
 
+});
+
+// Get all user (admin)
+exports.getAllUser = catchAsyncErrors(async(req,res,next)=>{
+    const users = await User.find();
+
+    res.status(200).json({
+        sussecc:true,
+        users ,
+    });
+});
+
+// Get One user (admin)
+exports.getOneUser = catchAsyncErrors(async(req,res,next)=>{
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        return next(new ErrorHander("User not exist"));
+    }
+
+    res.status(200).json({
+        sussecc:true,
+        user ,
+    });
+});
+
+
+// Update User Role -- admin
+exports.updateUserRole =catchAsyncErrors(async(req,res,next)=>{
+   
+    const newUserProfile = {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+    };
+
+   
+         const user = await User.findByIdAndUpdate(req.params.id, newUserProfile,{
+             new: true,
+             runValidators: true,
+             useFindAndModify: false,
+           
+         });
+
+    res.status(200).json({
+        sussecc:true,  
+        message: `user role: ${req.body.role}`   
+    });
+});
+// Delete user
+
+exports.deleteUser =catchAsyncErrors(async(req,res,next)=>{
+   
+    const user = await User.findById (req.params.id) ;
+
+    if(!user){
+        return next(new ErrorHander(`User not exist`))
+    }
+    await user.remove();
+
+    res.status(200).json({
+        sussecc:true,
+       message:` Delete succsecfull`
+       
+    });
 });

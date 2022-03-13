@@ -17,11 +17,11 @@ const productSchema =mongoose.Schema({
     },
     size:{
         type:Number,
-        required: [true,"Enter size"],
-        maxLength:[2,"Price cannot exceed 2 character"]
+        maxLength:[2,"Price cannot exceed 2 character"],
+        required: [true,"size"],
         
     },
-    rating:{
+    ratings:{
         type:Number,
         default:0
     },
@@ -33,7 +33,7 @@ const productSchema =mongoose.Schema({
         },
         url:{
             type:String,
-            required:true
+            required:true,
         }
     }
  ],
@@ -45,25 +45,30 @@ const productSchema =mongoose.Schema({
         type:Number,
         required:[true,"Enter Stock"],
         maxLength:[4," 4 characters"],
-        default:1
+        default:1,
     },
     numOfReviews:{
         type:Number,
-        default:0
+        default:0,
     },
     reviews:[
         {
+            user:{
+                type:mongoose.Schema.ObjectId,
+                ref:"User",
+                required:true,
+            },
             name:{
                 type:String,
-                required:true               
+                required:true ,              
             },
             rating:{
                 type:Number,
-                required:true
+                required:true,
             },
-            Comment:{
+            comment:{
                 type:String,
-                required:true
+                required:true,
             }
 
     }],
