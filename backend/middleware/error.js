@@ -8,6 +8,7 @@ module.exports=(err,req,res,next)=>{
     //Error Wrong ID
     if(err.name === "CastError"){
         const message =`Resoure not found. Invalid: ${err.path}`;
+       
         err = new ErrorHandler(message,400)
     }
 
