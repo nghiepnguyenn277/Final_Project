@@ -44,6 +44,7 @@
     width: 20vmax;
     padding: 1vmax;
     margin:  5vmax auto ;
+    color: black;
 }
 .productCard{
     width: 14vmax;
@@ -52,18 +53,16 @@
     text-decoration: none;
     color: black;
     margin: 2vmax;
-    z-index: 1;
-    padding-left: 0px;
-    padding-right: 3px;
+    transition:  all 0.5s;
+    padding-bottom: 0.5vmax;
+    box-shadow: black;
 }
 .productCard > img{
-    
-    display: block;
-    z-index: 1;
-    position: relative;
+
+    width: 14vmax;
 }
 .productCard >p{
-    font-size: 20px;
+    font-size: 1.5vmax;
     font-family: "Roboto";
     margin:  1vmax 0.5vmax;
     margin-bottom: 0;
@@ -81,4 +80,8 @@
 } 
 .productCard > span{
     font-size: 2vmax;
+    color:red;
+}
+.productCard:hover{
+    box-shadow:  0 0 5px blue;
 }
