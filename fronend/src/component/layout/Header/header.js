@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <ReactNavbar 
     burgerColor ="black"
-    burgerColorHover ="white"
+    burgerColorHover ="blue"
     logo={Logo}
     logoWidth	="200px"
     navColor1 ="white"
@@ -16,9 +16,6 @@ const Header = () => {
     link2Text = " Product"
     link3Text = " Chat"
     link4Text = " Contact"
-    
-    
-    
 
     link1Size ="2.5vmax"
     link1ColorHover ="blue"

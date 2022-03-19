@@ -1,28 +1,33 @@
 .banner{
-    background-image: linear-gradient(to right, #635dc0,#3027ae);
+    background-image: linear-gradient(to right, #5dc062,#912ab9);
     height: 100vmin ;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
-    color: white;
+    color: black;
 }
 .banner >p{
     font: 600 3vmax "Roboto";
 }
 .banner > a > button{
     border-radius: 50px;
-    cursor: pointer;
-    margin-bottom: 5vmax;
-    width: 9.2vmax;
-    height: 3.6vmax;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5vmax;
+    cursor:pointer;
+    background-color: (white);
+    border: 3px solid white;
+    padding: 1vmax;
+    margin: auto;
+    max-width: 100%;
+    transition: all 0.5s;
+    font: 200 2vmax  "Roboto";
+    margin-bottom: 3vmax;
+    margin-top: 3vmax;
     
 }
-.banner >a >button:hover{
-    color: blue;
+.banner > a > button:hover{
+    background-image: linear-gradient(to right, #82b485,#a071b3);
+    
 }
 .banner::after{
     content: "";
@@ -55,7 +60,7 @@
     margin: 2vmax;
     transition:  all 0.5s;
     padding-bottom: 0.5vmax;
-    box-shadow: black;
+    border:0.5px solid;
 }
 .productCard > img{
 
@@ -66,6 +71,7 @@
     font-family: "Roboto";
     margin:  1vmax 0.5vmax;
     margin-bottom: 0;
+    margin: auto;
 }
 .productCard > div > span{
     
@@ -81,7 +87,36 @@
 .productCard > span{
     font-size: 2vmax;
     color:red;
+    margin: auto;
 }
 .productCard:hover{
     box-shadow:  0 0 5px blue;
+    transform: translateY(-2vmax);
+}
+.container{
+    display: flex;
+    margin:auto;
+    justify-content:center;
+    flex-wrap: wrap;
+    width: 90vw;
+    max-width: 100%;
+    margin-left: 3vmax;
+    margin-right: 3vmax;
+}
+@media screen and (max-with:500px) {
+    .productCard >p{
+        font-size: 2vmax;
+    }
+    .productCard >div {
+        margin: 0vmax;
+        display: block;
+    }
+    .productCard >span{
+        font-size: 1.5vmax;
+    }
+    .productCard >div > span{
+        margin:  0 0 5 max;
+        font: 300 1vmax "Roboto" ;
+
+    }
 }
