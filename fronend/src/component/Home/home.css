@@ -15,8 +15,8 @@
     border-radius: 50px;
     cursor: pointer;
     margin-bottom: 5vmax;
-    width: 9vmax;
-    height: 2.5vmax;
+    width: 9.2vmax;
+    height: 3.6vmax;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5vmax;
     
@@ -44,4 +44,41 @@
     width: 20vmax;
     padding: 1vmax;
     margin:  5vmax auto ;
+}
+.productCard{
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    margin: 2vmax;
+    z-index: 1;
+    padding-left: 0px;
+    padding-right: 3px;
+}
+.productCard > img{
+    
+    display: block;
+    z-index: 1;
+    position: relative;
+}
+.productCard >p{
+    font-size: 20px;
+    font-family: "Roboto";
+    margin:  1vmax 0.5vmax;
+    margin-bottom: 0;
+}
+.productCard > div > span{
+    
+    margin: 0.8vmax;
+    font:0.8vmax "Roboto";
+   
+}
+.productCard > div{
+    margin: 0.5vmax;
+    display: flex;
+    justify-content:flex-start;
+} 
+.productCard > span{
+    font-size: 2vmax;
 }
