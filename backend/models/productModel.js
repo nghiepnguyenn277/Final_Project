@@ -15,12 +15,6 @@ const productSchema =mongoose.Schema({
         required: [true,"Enter price"],
         maxLength:[10,"Price cannot exceed 10 character"]
     },
-    size:{
-        type:Number,
-        maxLength:[2,"Price cannot exceed 2 character"],
-        required: [true,"size"],
-        
-    },
     ratings:{
         type:Number,
         default:0

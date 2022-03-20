@@ -1,5 +1,3 @@
-
-
 import {All_PRODUCT_REQUEST,
         All_PRODUCT_SUCCESS,
         All_PRODUCT_FALL,
@@ -11,19 +9,18 @@ export const productReducer = (state = { products:[] },action) =>{
         case All_PRODUCT_REQUEST:       
             return{
                     loading:true,
-                    product:[]
+                    products:[],
             };
-        case All_PRODUCT_SUCCESS:
-            
+        case All_PRODUCT_SUCCESS: 
             return{
                     loading:false,
                     products: action.payload.products,
-                    productsCount: action.payload.productCount,
+                    productsCount: action.payload.productsCount,
             };
         case All_PRODUCT_FALL:
                 return{
                         loading:false,
-                        error: action.payload.products,
+                        error: action.payload,
                 }
         case CLEAR_ERRORS:
                 return{
