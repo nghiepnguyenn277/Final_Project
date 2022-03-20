@@ -7,6 +7,7 @@ import Footer from "./component/layout/Footer/footer"
 import Home from "./component/Home/home";
 
 
+
 function App() {
 
   React.useEffect(()=>{

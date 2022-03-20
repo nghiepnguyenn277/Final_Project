@@ -1,7 +1,14 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { CgMouse } from 'react-icons/cg';
 import "./home.css"
 import Product from "./product.js"
+import MetaData from '../layout/metaData';
+import {getProduct} from "../../actions/productAction"
+import  {useSelector,useDispatch} from "react-redux"
+
+
+
+
 
 const product ={
   name:"Shoes1",
@@ -11,9 +18,23 @@ const product ={
    
 };
 
- const home = () => {
+ const Home = () => {
+
+  const  dispatch = useDispatch();
+  const {loading,error,products,productCount} =useSelector(state=>state.products)
+  useEffect(()=>{
+
+    dispatch(getProduct());
+  },[dispatch])
+
+
+
   return (
     <Fragment>
+
+        <MetaData title ="Nin Shoes" />
+
+
         <div className='banner'>
                 <p> Welcome to Nin store</p>
             <a href="#container">
@@ -24,19 +45,10 @@ const product ={
         </div>
         <h2 className="HomeHeading">Featureed Products</h2>
         <div className='container' id='container'>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-            <Product product={product}/>
-
+            {products & product.map((product) => <Product product={product}/>)};
         </div>
         
     </Fragment>
   );
 };
- export default home;
+ export default Home;
