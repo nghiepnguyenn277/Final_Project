@@ -8,6 +8,8 @@ import Home from "./component/Home/home";
 
 
 
+
+
 function App() {
 
   React.useEffect(()=>{
@@ -17,11 +19,15 @@ function App() {
       },
     })
   },[]);
+
   
   return (
     <Router>
       <Header/> 
       <Route extact path="/" component={Home}/>  
+       
+      
+    
       <Footer/>  
        </Router>
        

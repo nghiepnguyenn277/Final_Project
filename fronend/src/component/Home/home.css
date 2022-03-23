@@ -43,8 +43,8 @@
 }
 .HomeHeading{
     text-align: center;
-    font-size: 1.5vmax;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4vmax;
+    font-family: Roboto;
     border-bottom: 1px solid black;
     width: 20vmax;
     padding: 1vmax;
@@ -52,42 +52,43 @@
     color: black;
 }
 .productCard{
-    width: 14vmax;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: black;
-    margin: 2vmax;
-    transition:  all 0.5s;
-    padding-bottom: 0.5vmax;
-    border:0.5px solid;
+  width: 14vmax;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: rgb(48, 48, 48);
+  margin: 2vmax;
+  transition: all 0.5s;
+  padding-bottom: 0.5vmax;
 }
 .productCard > img{
 
     width: 14vmax;
 }
 .productCard >p{
-    font-size: 1.5vmax;
+    font-size: 1.2vmax;
     font-family: "Roboto";
     margin:  1vmax 0.5vmax;
     margin-bottom: 0;
-    margin: auto;
+    
 }
 .productCard > div > span{
     
-    margin: 0.8vmax;
-    font:0.8vmax "Roboto";
-   
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+  
 }
 .productCard > div{
     margin: 0.5vmax;
     display: flex;
     justify-content:flex-start;
+    
 } 
 .productCard > span{
-    font-size: 2vmax;
+    font-size: 1vmax;
     color:red;
-    margin: auto;
+    margin: 0.5vmax;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .productCard:hover{
     box-shadow:  0 0 5px blue;
@@ -95,17 +96,15 @@
 }
 .container{
     display: flex;
-    margin:auto;
-    justify-content:center;
+    margin: 2vmax auto;
+    width: 80vw;
     flex-wrap: wrap;
-    width: 90vw;
+    justify-content: center;
     max-width: 100%;
-    margin-left: 3vmax;
-    margin-right: 3vmax;
 }
-@media screen and (max-with:500px) {
+@media screen and (max-width: 600px) {
     .productCard >p{
-        font-size: 2vmax;
+        font-size: 1.7vmax;
     }
     .productCard >div {
         margin: 0vmax;
