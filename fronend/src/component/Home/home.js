@@ -3,29 +3,31 @@ import { CgMouse } from 'react-icons/cg';
 import "./home.css"
 import Product from "./product.js"
 import MetaData from '../layout/metaData';
-import {getProduct,getProductDetails} from "../../actions/productAction"
+import {getProduct} from "../../actions/productAction"
 import  {useSelector,useDispatch} from "react-redux"
 import Loader from '../layout/loader/Loader';
 import { useAlert } from 'react-alert';
 
 
- const Home = () => {
+  const Home = () => {
+
   const alert =useAlert()
   const  dispatch = useDispatch();
-  const {loading,error,products,productsCount} =useSelector(state=>state.products)
+  const {loading,error,products,productsCount} =useSelector(state=>state.products);
  
   useEffect(()=>{
    if(error){
       return alert.error(error);
    }
     dispatch(getProduct());
-  },[dispatch,error]);
+  },[dispatch,error,alert]);
 
 
 
   return (
     <Fragment>
-      {loading ? <Loader/> :
+   {loading ? 
+      <Loader/> :
       <Fragment>
       <MetaData title ="Nin Shoes" />
       <div className='banner'>

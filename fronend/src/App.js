@@ -24,9 +24,8 @@ function App() {
   return (
     <Router>
       <Header/> 
-      <Route extact path="/" component={Home}/>  
-       
-      
+      <Route extact path="/" component={Home}/>      
+        
     
       <Footer/>  
        </Router>

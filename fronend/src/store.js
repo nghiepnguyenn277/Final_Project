@@ -5,9 +5,8 @@ import { productReducer,productDetailsReducer} from "./reducers/productReducer";
 
 
 const reducer = combineReducers({
-    productDetails: productDetailsReducer,
     products: productReducer,
-  
+    productDetails: productDetailsReducer,
    
 });
 
