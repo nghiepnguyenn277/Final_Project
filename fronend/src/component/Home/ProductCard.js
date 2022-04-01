@@ -4,7 +4,7 @@ import ReactStars from "react-rating-stars-component"
 
 
 
-const Product = ({product }) => {
+const productCard = ({product }) => {
   const options ={
     edit:false,
     color:"#808080",
@@ -28,4 +28,4 @@ const Product = ({product }) => {
   );
 };
 
-export default Product
+export default productCard

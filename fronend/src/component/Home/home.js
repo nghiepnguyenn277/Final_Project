@@ -1,12 +1,13 @@
 import React, { Fragment, useEffect } from 'react'
 import { CgMouse } from 'react-icons/cg';
 import "./home.css"
-import Product from "./product.js"
+import Product from "./ProductCard"
 import MetaData from '../layout/metaData';
 import {getProduct} from "../../actions/productAction"
 import  {useSelector,useDispatch} from "react-redux"
 import Loader from '../layout/loader/Loader';
 import { useAlert } from 'react-alert';
+import { clearError} from '../../actions/productAction';
 
 
   const Home = () => {
@@ -17,7 +18,8 @@ import { useAlert } from 'react-alert';
  
   useEffect(()=>{
    if(error){
-      return alert.error(error);
+       alert.error(error);
+       dispatch(clearError());
    }
     dispatch(getProduct());
   },[dispatch,error,alert]);

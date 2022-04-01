@@ -2,9 +2,11 @@ import React, { Fragment, useEffect } from 'react'
 import Carousel from "react-material-ui-carousel"
 import "./ProductDetails.css"
 import {useDispatch,useSelector} from "react-redux";
-import { getProductDetails } from '../../actions/productAction';
+import { clearError, getProductDetails } from '../../actions/productAction';
 import ReactStars from "react-rating-stars-component"
 import ReviewCard from "./ReviewCard"
+import Loader from "../layout/loader/Loader"
+import{useAlert} from "react-alert"
 
 
 const ProductDetails = ({match}) => {
@@ -12,11 +14,15 @@ const ProductDetails = ({match}) => {
 
     const{product,loading,error} = useSelector(state=>state.productDetails)
 
-    const dispath =useDispatch();
+    const dispatch = useDispatch();
+    const alert =useAlert();
     useEffect(()=>{
-      
-        dispath(getProductDetails(match.params.id));
-    }, [dispath,match.params.id])
+        if(error){
+            alert.error(error);
+            dispatch(clearError());
+        }
+        dispatch(getProductDetails(match.params.id));
+    }, [dispatch,match.params.id,error,alert])
 
     const options ={
         edit:false,
@@ -30,6 +36,8 @@ const ProductDetails = ({match}) => {
 
   return (
     <Fragment>
+        {loading? <Loader/>: 
+        (  <Fragment>
         <div className='ProductDetails'>
             <div>
                 <Carousel>
@@ -88,6 +96,7 @@ const ProductDetails = ({match}) => {
                         No review yet
                     </p>
                 )}
+    </Fragment>)}
     </Fragment>
   );
 };

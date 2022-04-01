@@ -21,7 +21,7 @@ const options ={
   link1Margin:"2vmax",
 
   link1Url :"/home",
-  link2Url :"/product",
+  link2Url :"/products",
   link3Url :"/chat",
   link4Url :"/contact",
 
