@@ -12,7 +12,7 @@ const options ={
   logoHoverSize :"0px",
 
   link1Text :" Home",
-  link2Text : " Product",
+  link2Text : " Products",
   link3Text : " Chat",
   link4Text : " Contact",
 
