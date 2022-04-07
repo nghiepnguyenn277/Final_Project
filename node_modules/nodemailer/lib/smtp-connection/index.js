@@ -261,12 +261,12 @@ class SMTPConnection extends EventEmitter {
                         tnx: 'dns',
                         source: opts.host,
                         resolved: resolved.host,
-                        cached: !!resolved.cached
+                        cached: !!resolved._cached
                     },
                     'Resolved %s as %s [cache %s]',
                     opts.host,
                     resolved.host,
-                    resolved.cached ? 'hit' : 'miss'
+                    resolved._cached ? 'hit' : 'miss'
                 );
                 Object.keys(resolved).forEach(key => {
                     if (key.charAt(0) !== '_' && resolved[key]) {
@@ -299,12 +299,12 @@ class SMTPConnection extends EventEmitter {
                         tnx: 'dns',
                         source: opts.host,
                         resolved: resolved.host,
-                        cached: !!resolved.cached
+                        cached: !!resolved._cached
                     },
                     'Resolved %s as %s [cache %s]',
                     opts.host,
                     resolved.host,
-                    resolved.cached ? 'hit' : 'miss'
+                    resolved._cached ? 'hit' : 'miss'
                 );
                 Object.keys(resolved).forEach(key => {
                     if (key.charAt(0) !== '_' && resolved[key]) {
@@ -332,12 +332,12 @@ class SMTPConnection extends EventEmitter {
                         tnx: 'dns',
                         source: opts.host,
                         resolved: resolved.host,
-                        cached: !!resolved.cached
+                        cached: !!resolved._cached
                     },
                     'Resolved %s as %s [cache %s]',
                     opts.host,
                     resolved.host,
-                    resolved.cached ? 'hit' : 'miss'
+                    resolved._cached ? 'hit' : 'miss'
                 );
                 Object.keys(resolved).forEach(key => {
                     if (key.charAt(0) !== '_' && resolved[key]) {

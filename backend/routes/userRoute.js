@@ -1,42 +1,46 @@
 const express = require("express");
-const 
-{
-    registerUser, 
-    loginUser,
-    Logout,
-    forgotPassword,
-    resetPassword,
-    getUserDetails,
-    updatePassword,
-    updateProfile,
-    getAllUser,
-    getOneUser,
-    updateUserRole,
-    deleteUser,
-} =require("../controllers/userController");
-const {isAuthenticateUser, authorizeRoles} = require("../middleware/auth")
+const {
+  registerUser,
+  loginUser,
+  logout,
+  forgotPassword,
+  resetPassword,
+  getUserDetails,
+  updatePassword,
+  updateProfile,
+  getAllUser,
+  getSingleUser,
+  updateUserRole,
+  deleteUser,
+} = require("../controllers/userController");
+const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
+
 const router = express.Router();
 
-
-// Register, Login, Logout, Reset Password
 router.route("/register").post(registerUser);
+
 router.route("/login").post(loginUser);
-router.route("/logout").get(Logout);
+
 router.route("/password/forgot").post(forgotPassword);
+
 router.route("/password/reset/:token").put(resetPassword);
 
-// see Profile
- router.route("/profile").get(isAuthenticateUser, getUserDetails)
+router.route("/logout").get(logout);
 
-// change Profile
-router.route("/profile/update").put(isAuthenticateUser,updateProfile);
+router.route("/me").get(isAuthenticatedUser, getUserDetails);
 
-// change password
-router.route("/password/changepassword").put(isAuthenticateUser,updatePassword);
+router.route("/password/update").put(isAuthenticatedUser, updatePassword);
 
-// admin management User
-router.route("/admin/users").get(isAuthenticateUser,authorizeRoles("admin"),getAllUser);
-router.route("/admin/user/:id").get(isAuthenticateUser,authorizeRoles("admin"),getOneUser);
-router.route("/admin/user/:id").put(isAuthenticateUser,authorizeRoles("admin"),updateUserRole);
-router.route("/admin/user/:id").delete(isAuthenticateUser,authorizeRoles("admin"),deleteUser);
-module.exports =  router;
+router.route("/me/update").put(isAuthenticatedUser, updateProfile);
+
+router
+  .route("/admin/users")
+  .get(isAuthenticatedUser, authorizeRoles("admin"), getAllUser);
+
+router
+  .route("/admin/user/:id")
+  .get(isAuthenticatedUser, authorizeRoles("admin"), getSingleUser)
+  .put(isAuthenticatedUser, authorizeRoles("admin"), updateUserRole)
+  .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteUser);
+
+module.exports = router;
