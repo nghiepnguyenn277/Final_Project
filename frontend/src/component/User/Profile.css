@@ -20,9 +20,10 @@
 }
 
 .profileContainer > div:first-child > h1 {
-  color: rgba(0, 0, 0, 0.555);
-  font: 500 2.2vmax "Roboto";
+  color: red;
+  font-size: 50px  ;
   transform: translateX(-10vmax) translateY(-2vmax);
+  margin-left: 325px;
 }
 
 .profileContainer > div:first-child > img {
@@ -37,8 +38,8 @@
 
 .profileContainer > div:first-child > a {
   border: none;
-  background-color: tomato;
-  font: 400 1vmax "Roboto";
+  background-color: black;
+  font: 400 1vmax ;
   color: white;
   text-decoration: none;
   padding: 0.5vmax;
@@ -46,10 +47,11 @@
   margin: 4vmax;
   text-align: center;
   transition: all 0.5s;
+  border-radius: 50px;
 }
 
 .profileContainer > div:first-child > a:hover {
-  background-color: rgb(204, 78, 56);
+  background-color: tomato;
 }
 
 .profileContainer > div:last-child {
@@ -61,13 +63,15 @@
 
 .profileContainer > div:last-child > div > h4 {
   color: black;
-  font: 400 1.2vmax "Roboto";
+  font-size: 25px ;
 }
 
 .profileContainer > div:last-child > div > p {
-  color: rgba(0, 0, 0, 0.418);
-  font: 400 1vmax cursive;
+  color: black;
+  font-size: 20px ;
   margin: 0.2vmax;
+ 
+  
 }
 
 .profileContainer > div:last-child > div:last-child {
@@ -78,18 +82,19 @@
 
 .profileContainer > div:last-child > div:last-child > a {
   border: none;
-  background-color: rgb(68, 68, 68);
-  font: 400 1vmax "Roboto";
+  background-color: black;
+  font: 400 1vmax ;
   color: white;
   text-decoration: none;
   padding: 0.5vmax;
   text-align: center;
   transition: all 0.5s;
   margin: 1vmax 0;
+   border-radius: 50px;
 }
 
 .profileContainer > div:last-child > div:last-child > a:hover {
-  background-color: rgb(31, 31, 31);
+  background-color: tomato;
 }
 
 @media screen and (max-width: 600px) {
