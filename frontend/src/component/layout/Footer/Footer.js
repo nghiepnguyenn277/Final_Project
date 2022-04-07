@@ -1,33 +1,24 @@
 import React from "react";
-import playStore from "../../../images/playstore.png";
-import appStore from "../../../images/Appstore.png";
+import { GrFacebook,GrInstagram } from "react-icons/gr";
 import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer id="footer">
-      <div className="leftFooter">
-        <h4>DOWNLOAD OUR APP</h4>
-        <p>Download App for Android and IOS mobile phone</p>
-        <img src={playStore} alt="playstore" />
-        <img src={appStore} alt="Appstore" />
-      </div>
-
-      <div className="midFooter">
-        <h1>ECOMMERCE.</h1>
-        <p>High Quality is our first priority</p>
-
-        <p>Copyrights 2021 &copy; MeAbhiSingh</p>
-      </div>
-
-      <div className="rightFooter">
-        <h4>Follow Us</h4>
-        <a href="http://instagram.com/meabhisingh">Instagram</a>
-        <a href="http://youtube.com/6packprogramemr">Youtube</a>
-        <a href="http://instagram.com/meabhisingh">Facebook</a>
-      </div>
-    </footer>
+        <footer id='footer'>
+            <div className ="left-footer">
+                <h1>NIN SHOES</h1>
+        
+                <p>Copyrights 2022 &copy; Nghiep Nguyen</p>
+            </div>
+            <div className= "rigth-footer">
+                <h4>Follow Us</h4>
+                  <a href='https://www.instagram.com/__nin.2k/'> <GrInstagram color='white'/> Instagram</a>
+                   <a  href='https://www.facebook.com/nghiepnguyen277'> <GrFacebook color='white' /> Facebook</a>
+                       
+            </div>
+          
+        </footer>
   );
-};
+}
 
 export default Footer;

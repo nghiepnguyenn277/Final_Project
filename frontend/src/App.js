@@ -119,7 +119,14 @@ function App() {
         <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder} />
 
         <ProtectedRoute exact path="/order/:id" component={OrderDetails} />
+        
+        <Route
+          component={
+            window.location.pathname === "/process/payment" ? null : NotFound
+          }
+        />
 
+ {/* Addmin role */}
         <ProtectedRoute
           isAdmin={true}
           exact
@@ -179,11 +186,7 @@ function App() {
           component={ProductReviews}
         />
 
-        <Route
-          component={
-            window.location.pathname === "/process/payment" ? null : NotFound
-          }
-        />
+      
       </Switch>
 
       <Footer />
