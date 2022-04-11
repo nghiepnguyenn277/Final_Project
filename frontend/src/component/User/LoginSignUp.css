@@ -84,6 +84,29 @@
   font-size: 1.6vmax;
   color: rgba(0, 0, 0, 0.623);
 }
+.signUpBtnt{
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 15px  ;
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 50px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  justify-content: 5px;
+  max-width: 95%;
+}
+.signUpBtnt > lu {
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+
+}
 
 .loginForm > a {
   color: rgba(0, 0, 0, 0.651);
@@ -129,7 +152,7 @@
   border: none;
   background-color: black;
   color: white;
-  font: 300 0.9vmax "Roboto";
+  font-size: 15px  ;
   width: 100%;
   padding: 0.8vmax;
   cursor: pointer;
@@ -137,10 +160,13 @@
   border-radius: 50px;
   outline: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  justify-content: 5px 
 }
 
 .loginBtn:hover,
-.signUpBtn:hover {
+.signUpBtn:hover,
+.signUpBtnt:hover
+ {
   background-color: rgb(179, 66, 46);
 }
 
@@ -158,6 +184,7 @@
 .shiftToRight {
   transform: translateX(100%);
 }
+
 
 @media screen and (max-width: 600px) {
   .LoginSignUpContainer {

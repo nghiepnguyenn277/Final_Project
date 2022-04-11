@@ -2,12 +2,10 @@ import React, { Fragment, useRef, useState, useEffect } from "react";
 import "./LoginSignUp.css";
 import Loader from "../layout/Loader/Loader";
 import { Link } from "react-router-dom";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
+import { FcUnlock, FcVoicemail,FcBusinessman } from "react-icons/fc";
 
 const LoginSignUp = ({ history, location }) => {
   const dispatch = useDispatch();
@@ -110,13 +108,13 @@ const LoginSignUp = ({ history, location }) => {
               <div>
                 <div className="login_signUp_toggle">
                   <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
-                  <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
+                  <p>REGISTER</p>
                 </div>
                 <button ref={switcherTab}></button>
               </div>
               <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
                 <div className="loginEmail">
-                  <MailOutlineIcon />
+                  <FcVoicemail />
                   <input
                     type="email"
                     placeholder="Email"
@@ -126,7 +124,7 @@ const LoginSignUp = ({ history, location }) => {
                   />
                 </div>
                 <div className="loginPassword">
-                  <LockOpenIcon />
+                  <FcUnlock />
                   <input
                     type="password"
                     placeholder="Password"
@@ -137,6 +135,15 @@ const LoginSignUp = ({ history, location }) => {
                 </div>
                 <Link to="/password/forgot">Forget Password ?</Link>
                 <input type="submit" value="Login" className="loginBtn" />
+                <div  onClick={(e) => switchTabs(e, "register")} className="signUpBtnt">
+                    <lu>
+                        Register
+                    </lu>
+                </div>
+                
+
+               
+            
               </form>
               <form
                 className="signUpForm"
@@ -145,7 +152,7 @@ const LoginSignUp = ({ history, location }) => {
                 onSubmit={registerSubmit}
               >
                 <div className="signUpName">
-                  <FaceIcon />
+                  <FcBusinessman />
                   <input
                     type="text"
                     placeholder="Name"
@@ -156,7 +163,7 @@ const LoginSignUp = ({ history, location }) => {
                   />
                 </div>
                 <div className="signUpEmail">
-                  <MailOutlineIcon />
+                  <FcVoicemail />
                   <input
                     type="email"
                     placeholder="Email"
@@ -167,7 +174,7 @@ const LoginSignUp = ({ history, location }) => {
                   />
                 </div>
                 <div className="signUpPassword">
-                  <LockOpenIcon />
+                  <FcUnlock />
                   <input
                     type="password"
                     placeholder="Password"
