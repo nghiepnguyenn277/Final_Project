@@ -2,16 +2,13 @@ import React, { Fragment, useState } from "react";
 import "./Header.css";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
 import Backdrop from "@material-ui/core/Backdrop";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import PersonIcon from "@material-ui/icons/Person";
+
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import ListAltIcon from "@material-ui/icons/ListAlt";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
-
+import { FcDataSheet, FcPaid,FcPortraitMode ,FcAreaChart} from "react-icons/fc";
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -21,11 +18,11 @@ const UserOptions = ({ user }) => {
   const dispatch = useDispatch();
 
   const options = [
-    { icon: <ListAltIcon />, name: "Orders", func: orders },
-    { icon: <PersonIcon />, name: "Profile", func: account },
+    { icon: <FcDataSheet />, name: "Orders", func: orders },
+    { icon: <FcPortraitMode />, name: "Profile", func: account },
     {
       icon: (
-        <ShoppingCartIcon
+        <FcPaid
           style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
         />
       ),
@@ -37,7 +34,7 @@ const UserOptions = ({ user }) => {
 
   if (user.role === "admin") {
     options.unshift({
-      icon: <DashboardIcon />,
+      icon: <FcAreaChart />,
       name: "Dashboard",
       func: dashboard,
     });

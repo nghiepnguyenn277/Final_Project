@@ -107,7 +107,7 @@ const LoginSignUp = ({ history, location }) => {
             <div className="LoginSignUpBox">
               <div>
                 <div className="login_signUp_toggle">
-                  <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
+                  <p>LOGIN</p>
                   <p>REGISTER</p>
                 </div>
                 <button ref={switcherTab}></button>
@@ -195,6 +195,11 @@ const LoginSignUp = ({ history, location }) => {
                   />
                 </div>
                 <input type="submit" value="Register" className="signUpBtn" />
+                <div  onClick={(e) => switchTabs(e, "login")} className="signUpBtnt">
+                    <lu>
+                        Login
+                    </lu>
+                </div>
               </form>
             </div>
           </div>

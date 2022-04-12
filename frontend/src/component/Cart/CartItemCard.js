@@ -1,6 +1,7 @@
 import React from "react";
 import "./CartItemCard.css";
 import { Link } from "react-router-dom";
+import { AiTwotoneDelete } from "react-icons/ai";
 
 const CartItemCard = ({ item, deleteCartItems }) => {
   return (
@@ -9,9 +10,12 @@ const CartItemCard = ({ item, deleteCartItems }) => {
       <div>
         <Link to={`/product/${item.product}`}>{item.name}</Link>
         <span>{`Price: ${item.price}$`}</span>
-        <p onClick={() => deleteCartItems(item.product)}>Remove</p>
+      </div>
+      <div>
+      <AiTwotoneDelete className="deleteIcon"   onClick={() => deleteCartItems(item.product)}/>
       </div>
     </div>
+
   );
 };
 

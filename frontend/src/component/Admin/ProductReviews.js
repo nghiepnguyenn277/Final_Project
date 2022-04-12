@@ -5,12 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   clearErrors,
   getAllReviews,
-  deleteReviews,
 } from "../../actions/productAction";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
-import DeleteIcon from "@material-ui/icons/Delete";
 import Star from "@material-ui/icons/Star";
 
 import SideBar from "./Sidebar";
@@ -31,9 +29,7 @@ const ProductReviews = ({ history }) => {
 
   const [productId, setProductId] = useState("");
 
-  const deleteReviewHandler = (reviewId) => {
-    dispatch(deleteReviews(reviewId, productId));
-  };
+
 
   const productReviewsSubmitHandler = (e) => {
     e.preventDefault();
@@ -91,28 +87,6 @@ const ProductReviews = ({ history }) => {
           : "redColor";
       },
     },
-
-    {
-      field: "actions",
-      flex: 0.3,
-      headerName: "Actions",
-      minWidth: 150,
-      type: "number",
-      sortable: false,
-      renderCell: (params) => {
-        return (
-          <Fragment>
-            <Button
-              onClick={() =>
-                deleteReviewHandler(params.getValue(params.id, "id"))
-              }
-            >
-              <DeleteIcon />
-            </Button>
-          </Fragment>
-        );
-      },
-    },
   ];
 
   const rows = [];
@@ -158,7 +132,7 @@ const ProductReviews = ({ history }) => {
                 loading ? true : false || productId === "" ? true : false
               }
             >
-              Search
+              Search  
             </Button>
           </form>
 

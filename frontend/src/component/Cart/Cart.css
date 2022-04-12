@@ -21,7 +21,7 @@
   border: none;
   padding: 1vmax 3vmax;
   cursor: pointer;
-  font: 400 1vmax "Roboto";
+  font: 400 1vmax ;
   text-decoration: none;
 }
 
@@ -37,7 +37,7 @@
   color: white;
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  font: 300 0.7vmax "Roboto";
+  font: 300 0.7vmax ;
 }
 .cartHeader > p {
   margin: 10px;
@@ -112,15 +112,19 @@
   justify-content: flex-end;
 }
 .checkOutBtn > button {
-  background-color: tomato;
+  background-color: black;
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
   width: 50%;
-  font: 300 0.8vmax "Roboto";
+  font-size:15px;
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;
+
+}
+.checkOutBtn  :hover{
+  background-color: tomato;
 }
 
 @media screen and (max-width: 600px) {
