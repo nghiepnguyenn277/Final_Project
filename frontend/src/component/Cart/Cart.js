@@ -95,7 +95,7 @@ const Cart = ({ history }) => {
               </div>
               <div></div>
               <div className="checkOutBtn">
-                <button onClick={checkoutHandler}>Pay ment</button>
+                <button onClick={checkoutHandler}>Payment</button>
               </div>
             </div>
           </div>

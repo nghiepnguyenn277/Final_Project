@@ -4,14 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { saveShippingInfo } from "../../actions/cartAction";
 import MetaData from "../layout/MetaData";
 import PinDropIcon from "@material-ui/icons/PinDrop";
-import HomeIcon from "@material-ui/icons/Home";
-import LocationCityIcon from "@material-ui/icons/LocationCity";
-import PublicIcon from "@material-ui/icons/Public";
-import PhoneIcon from "@material-ui/icons/Phone";
-import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStation";
 import { Country, State } from "country-state-city";
 import { useAlert } from "react-alert";
 import CheckoutSteps from "../Cart/CheckoutSteps";
+import { FcHome ,FcGlobe,FcPhone,FcDepartment,FcShop } from "react-icons/fc";
+
 
 const Shipping = ({ history }) => {
   const dispatch = useDispatch();
@@ -54,7 +51,7 @@ const Shipping = ({ history }) => {
             onSubmit={shippingSubmit}
           >
             <div>
-              <HomeIcon />
+              <FcHome />
               <input
                 type="text"
                 placeholder="Address"
@@ -65,7 +62,7 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <LocationCityIcon />
+              <FcDepartment />
               <input
                 type="text"
                 placeholder="City"
@@ -76,7 +73,7 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <PinDropIcon />
+              <PinDropIcon style={{color:'red'}} />
               <input
                 type="number"
                 placeholder="Pin Code"
@@ -87,7 +84,7 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <PhoneIcon />
+              <FcPhone />
               <input
                 type="number"
                 placeholder="Phone Number"
@@ -99,7 +96,7 @@ const Shipping = ({ history }) => {
             </div>
 
             <div>
-              <PublicIcon />
+              <FcGlobe />
 
               <select
                 required
@@ -118,7 +115,7 @@ const Shipping = ({ history }) => {
 
             {country && (
               <div>
-                <TransferWithinAStationIcon />
+                <FcShop />
 
                 <select
                   required

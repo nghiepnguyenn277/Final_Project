@@ -34,12 +34,12 @@
 }
 .confirmshippingAreaBox > div > span {
   margin: 0 1vmax;
-  font: 100 1vmax "Roboto";
-  color: #575757;
+  font-size: 15px;
+  color: black;
 }
 
 .confirmCartItems > p {
-  font: 400 1.8vmax "Roboto";
+  font-size: 25px ;
 }
 
 .confirmCartItems {
@@ -54,7 +54,7 @@
 
 .confirmCartItemsContainer > div {
   display: flex;
-  font: 400 1vmax "Roboto";
+  font-size: 20px ;
   align-items: center;
   justify-content: space-between;
   margin: 2vmax 0;
@@ -65,15 +65,15 @@
 }
 
 .confirmCartItemsContainer > div > a {
-  color: #575757;
+  color: black;
   margin: 0 2vmax;
   width: 60%;
   text-decoration: none;
 }
 
 .confirmCartItemsContainer > div > span {
-  font: 100 1vmax "Roboto";
-  color: #5e5e5e;
+  font-size: 15px ;
+  color: black;
 }
 
 .orderSummary {
@@ -92,7 +92,7 @@
 
 .orderSummary > div > div {
   display: flex;
-  font: 300 1vmax "Roboto";
+  font-size: 20px ;
   justify-content: space-between;
   margin: 2vmax 0;
 }
@@ -102,14 +102,14 @@
 
 .orderSummaryTotal {
   display: flex;
-  font: 300 1vmax "Roboto";
+  font-size: 20px;
   justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.363);
+  border-top: 1px solid black;
   padding: 2vmax 0;
 }
 
 .orderSummary > button {
-  background-color: tomato;
+  background-color: black;
   color: white;
   width: 100%;
   padding: 1vmax;
@@ -117,11 +117,12 @@
   margin: auto;
   cursor: pointer;
   transition: 0.5s;
-  font: 400 1vmax "Roboto";
+  font-size: 15px ;
+  border-radius: 30px;
 }
 
 .orderSummary > button:hover {
-  background-color: rgb(192, 71, 50);
+  background-color: tomato;
 }
 
 @media screen and (max-width: 600px) {

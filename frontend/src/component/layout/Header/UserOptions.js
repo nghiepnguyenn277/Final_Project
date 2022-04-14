@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
-import { FcDataSheet, FcPaid,FcPortraitMode ,FcAreaChart} from "react-icons/fc";
+import { FcDataSheet, FcPaid,FcPortraitMode ,FcPieChart} from "react-icons/fc";
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -29,12 +29,12 @@ const UserOptions = ({ user }) => {
       name: `Cart(${cartItems.length})`,
       func: cart,
     },
-    { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
+    { icon: <ExitToAppIcon style={{color:'blue'}} />, name: "Logout", func: logoutUser },
   ];
 
   if (user.role === "admin") {
     options.unshift({
-      icon: <FcAreaChart />,
+      icon: <FcPieChart />,
       name: "Dashboard",
       func: dashboard,
     });

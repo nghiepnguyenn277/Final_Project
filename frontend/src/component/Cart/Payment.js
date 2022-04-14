@@ -15,8 +15,7 @@ import {
 import axios from "axios";
 import "./payment.css";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
-import EventIcon from "@material-ui/icons/Event";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import { FcKey,FcLeave } from "react-icons/fc";
 import { createOrder, clearErrors } from "../../actions/orderAction";
 
 const Payment = ({ history }) => {
@@ -122,15 +121,15 @@ const Payment = ({ history }) => {
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
           <Typography>Card Info</Typography>
           <div>
-            <CreditCardIcon />
+            <CreditCardIcon style={{color:'green'}} />
             <CardNumberElement className="paymentInput" />
           </div>
           <div>
-            <EventIcon />
+            <FcLeave />
             <CardExpiryElement className="paymentInput" />
           </div>
           <div>
-            <VpnKeyIcon />
+            <FcKey />
             <CardCvcElement className="paymentInput" />
           </div>
 
