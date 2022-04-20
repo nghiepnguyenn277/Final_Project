@@ -20,13 +20,13 @@ const Sidebar = () => {
           defaultCollapseIcon={<FcCollapse />}
           defaultExpandIcon={<FcViewDetails />}
         >
-          <TreeItem nodeId="1" label="Products">
+          <TreeItem nodeId="1" label="Products Management">
             <Link to="/admin/products">
-              <TreeItem nodeId="2" label="All" icon={<FcDataConfiguration />} />
+              <TreeItem nodeId="2" label="All Product" icon={<FcDataConfiguration />} />
             </Link>
 
             <Link to="/admin/product">
-              <TreeItem nodeId="3" label="Create" icon={<FcDataRecovery />} />
+              <TreeItem nodeId="3" label="Create Product" icon={<FcDataRecovery />} />
             </Link>
           </TreeItem>
         </TreeView>
@@ -34,12 +34,12 @@ const Sidebar = () => {
       <Link to="/admin/orders">
         <p>
           <FcList />
-          Orders
+          Orders Management
         </p>
       </Link>
       <Link to="/admin/users">
         <p>
-          <FcBusinessman /> Users
+          <FcBusinessman /> Users Management
         </p>
       </Link>
       <Link to="/admin/reviews">

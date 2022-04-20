@@ -35,7 +35,7 @@ const UserOptions = ({ user }) => {
   if (user.role === "admin") {
     options.unshift({
       icon: <FcPieChart />,
-      name: "Dashboard",
+      name: "Management",
       func: dashboard,
     });
   }
