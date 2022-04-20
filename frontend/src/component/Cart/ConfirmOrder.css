@@ -146,14 +146,14 @@
   }
 
   .confirmshippingAreaBox > div > p {
-    font: 400 4vw "Roboto";
+    font-size: 30px ;
   }
   .confirmshippingAreaBox > div > span {
-    font: 100 4vw "Roboto";
+    font-size: 25px;
   }
 
   .confirmCartItems > p {
-    font: 400 6vw "Roboto";
+    font-size: 25px ;
   }
 
   .confirmCartItemsContainer {
