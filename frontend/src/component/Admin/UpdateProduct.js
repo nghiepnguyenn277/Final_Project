@@ -8,14 +8,11 @@ import {
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
 import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import SideBar from "./Sidebar";
 import { UPDATE_PRODUCT_RESET } from "../../constants/productConstants";
-
+import { FcSurvey,FcDocument,FcFolder } from "react-icons/fc";
 const UpdateProduct = ({ history, match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -134,10 +131,10 @@ const UpdateProduct = ({ history, match }) => {
             encType="multipart/form-data"
             onSubmit={updateProductSubmitHandler}
           >
-            <h1>Create Product</h1>
+            <h1>Updated Product</h1>
 
             <div>
-              <SpellcheckIcon />
+              <FcSurvey />
               <input
                 type="text"
                 placeholder="Product Name"
@@ -147,7 +144,7 @@ const UpdateProduct = ({ history, match }) => {
               />
             </div>
             <div>
-              <AttachMoneyIcon />
+              <AttachMoneyIcon style={{color:"red"}} />
               <input
                 type="number"
                 placeholder="Price"
@@ -158,7 +155,7 @@ const UpdateProduct = ({ history, match }) => {
             </div>
 
             <div>
-              <DescriptionIcon />
+              <FcDocument />
 
               <textarea
                 placeholder="Product Description"
@@ -170,7 +167,7 @@ const UpdateProduct = ({ history, match }) => {
             </div>
 
             <div>
-              <AccountTreeIcon />
+              <FcFolder />
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
@@ -185,7 +182,7 @@ const UpdateProduct = ({ history, match }) => {
             </div>
 
             <div>
-              <StorageIcon />
+              <StorageIcon style={{ color:"green"}}/>
               <input
                 type="number"
                 placeholder="Stock"

@@ -56,7 +56,7 @@ const ProductList = ({ history }) => {
 
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Product Name",
       minWidth: 350,
       flex: 1,
     },
@@ -77,9 +77,9 @@ const ProductList = ({ history }) => {
     },
 
     {
-      field: "actions",
+      field: "Edit/Delete",
       flex: 0.3,
-      headerName: "Actions",
+      headerName: "Edit/Delete",
       minWidth: 150,
       type: "number",
       sortable: false,
@@ -87,15 +87,17 @@ const ProductList = ({ history }) => {
         return (
           <Fragment>
             <Link to={`/admin/product/${params.getValue(params.id, "id")}`}>
-              <EditIcon />
+              <EditIcon style={{color: "green",height: 25, width :25 , marginTop:15}} />
             </Link>
-
+              <div style={{height: 30 , marginLeft:10}} >
+                |
+              </div>    
             <Button
               onClick={() =>
                 deleteProductHandler(params.getValue(params.id, "id"))
               }
             >
-              <DeleteIcon />
+              <DeleteIcon style={{color: "Red",height: 30, width :30}} />
             </Button>
           </Fragment>
         );
@@ -110,8 +112,9 @@ const ProductList = ({ history }) => {
       rows.push({
         id: item._id,
         stock: item.Stock,
-        price: item.price,
+        price: `${item.price} $`,
         name: item.name,
+       
       });
     });
 

@@ -81,24 +81,26 @@ const OrderList = ({ history }) => {
 
     {
       field: "actions",
-      flex: 0.3,
-      headerName: "Actions",
-      minWidth: 150,
+      flex: 0.5,
+      headerName: "Edit/ Delete",
+      minWidth: 155,
       type: "number",
       sortable: false,
       renderCell: (params) => {
         return (
           <Fragment>
             <Link to={`/admin/order/${params.getValue(params.id, "id")}`}>
-              <EditIcon />
+              <EditIcon  style={{color: "green",height: 25, width :25 , marginTop:15}}/>
             </Link>
-
+            <div style={{height: 30 , marginLeft:10}} >
+                |
+              </div>  
             <Button
               onClick={() =>
                 deleteOrderHandler(params.getValue(params.id, "id"))
               }
             >
-              <DeleteIcon />
+              <DeleteIcon style={{color: "Red",height: 30, width :30}} />
             </Button>
           </Fragment>
         );

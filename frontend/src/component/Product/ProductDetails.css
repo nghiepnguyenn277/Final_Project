@@ -57,7 +57,8 @@
 
 .detailsBlock-3 > h1 {
   color: rgba(17, 17, 17, 0.795);
-  font: 400 1.8vmax "Franklin Gothic Medium";
+  font: 400 1.8vmax ;
+  color: tomato;
   margin: 1vmax 0;
 }
 .detailsBlock-3-1 {
@@ -65,26 +66,16 @@
   align-items: center;
 }
 
-.detailsBlock-3-1-1 > button {
-  border: none;
-  background-color: rgba(0, 0, 0, 0.616);
-  padding: 0.5vmax;
-  cursor: pointer;
-  color: white;
-  transition: all 0.5s;
-}
-.detailsBlock-3-1-1 > button:hover {
-  background-color: rgba(0, 0, 0, 0.767);
-}
 
 .detailsBlock-3-1-1 > input {
   border: none;
   padding: 0.5vmax;
-  width: 1vmax;
+  width: 2.5vmax;
   text-align: center;
   outline: none;
-  font: 400 0.8vmax "Roboto";
+  font-size: 40px;
   color: rgba(0, 0, 0, 0.74);
+  
 }
 
 .detailsBlock-3-1 > button:last-child {
@@ -92,18 +83,22 @@
   cursor: pointer;
   color: white;
   transition: all 0.5s;
-  background-color: tomato;
-  font: 500 0.7vmax "Roboto";
+  background-color: black;
+  font-size: 20px;
   border-radius: 20px;
   padding: 0.5vmax 2vmax;
   margin: 1vmax;
   outline: none;
+  margin-left: 50px;
+  
 }
 
 .detailsBlock-3-1 > button:last-child:hover {
-  background-color: rgb(214, 84, 61);
+  background-color: tomato;
 }
-
+.detailsBlock-3-1 > :last-child:hover {
+color: black;
+}
 .detailsBlock-3 > p {
   border-top: 1px solid rgba(0, 0, 0, 0.205);
   border-bottom: 1px solid rgba(0, 0, 0, 0.205);
@@ -125,8 +120,8 @@
 
 .submitReview {
   border: none;
-  background-color: tomato;
-  font: 500 0.7vmax "Roboto";
+  background-color: black;
+  font-size: 20px;
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
   margin: 1vmax 0;
@@ -136,7 +131,7 @@
   outline: none;
 }
 .submitReview:hover {
-  background-color: rgb(197, 68, 45);
+  background-color: tomato;
   transform: scale(1.1);
 }
 
@@ -236,15 +231,12 @@
   .detailsBlock-3-1-1 {
     padding: 2vmax 0;
   }
-  .detailsBlock-3-1-1 > button {
-    padding: 1.2vmax;
-    width: 4vmax;
-  }
+
 
   .detailsBlock-3-1-1 > input {
     padding: 1.5vmax;
     width: 3vmax;
-    font: 400 1.8vmax "Roboto";
+    font-size: 20px ;
   }
 
   .detailsBlock-3-1 > button:last-child {

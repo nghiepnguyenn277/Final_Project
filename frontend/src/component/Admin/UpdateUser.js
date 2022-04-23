@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
 import MetaData from "../layout/MetaData";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import PersonIcon from "@material-ui/icons/Person";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
+import { AiTwotoneMail } from "react-icons/ai";
+import { FcBusinessman } from "react-icons/fc";
+import { MdSecurity } from "react-icons/md";
 import SideBar from "./Sidebar";
 import { UPDATE_USER_RESET } from "../../constants/userConstants";
 import {
@@ -84,30 +84,17 @@ const UpdateUser = ({ history, match }) => {
               onSubmit={updateUserSubmitHandler}
             >
               <h1>Update User</h1>
-
-              <div>
-                <PersonIcon />
-                <input
-                  type="text"
-                  placeholder="Name"
-                  required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+              <div>         
+                <h1 style={{color :"black", marginLeft:10}}><FcBusinessman  style={{height: 30 , width:30, bottom:15 }}/>:{user.name}
+                </h1>
               </div>
+        
               <div>
-                <MailOutlineIcon />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
+                <h1 style={{color :"black", marginLeft:10}}><AiTwotoneMail style={{height: 25, width:25, color:"green" }}/>:{user.email}</h1>
               </div>
 
               <div>
-                <VerifiedUserIcon />
+                <MdSecurity style={{color:"red"}} />
                 <select value={role} onChange={(e) => setRole(e.target.value)}>
                   <option value="">Choose Role</option>
                   <option value="admin">Admin</option>
@@ -118,11 +105,12 @@ const UpdateUser = ({ history, match }) => {
               <Button
                 id="createProductBtn"
                 type="submit"
+                
                 disabled={
                   updateLoading ? true : false || role === "" ? true : false
                 }
               >
-                Update
+                Update Role
               </Button>
             </form>
           )}

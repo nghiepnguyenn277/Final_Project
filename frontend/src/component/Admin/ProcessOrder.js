@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import MetaData from "../layout/MetaData";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
+import { FcAnswers } from "react-icons/fc";
 import SideBar from "./Sidebar";
 import {
   getOrderDetails,
@@ -11,7 +12,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
+
 import { Button } from "@material-ui/core";
 import { UPDATE_ORDER_RESET } from "../../constants/orderConstants";
 import "./processOrder.css";
@@ -93,6 +94,7 @@ const ProcessOrder = ({ history, match }) => {
                   <Typography>Payment</Typography>
                   <div className="orderDetailsContainerBox">
                     <div>
+                    <p>Status:</p>
                       <p
                         className={
                           order.paymentInfo &&
@@ -110,7 +112,7 @@ const ProcessOrder = ({ history, match }) => {
 
                     <div>
                       <p>Amount:</p>
-                      <span>{order.totalPrice && order.totalPrice}</span>
+                      <span>{ order.totalPrice && order.totalPrice }</span>
                     </div>
                   </div>
 
@@ -130,7 +132,7 @@ const ProcessOrder = ({ history, match }) => {
                   </div>
                 </div>
                 <div className="confirmCartItems">
-                  <Typography>Your Cart Items:</Typography>
+                  <Typography> Cart Items:</Typography>
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
@@ -161,9 +163,9 @@ const ProcessOrder = ({ history, match }) => {
                   <h1>Process Order</h1>
 
                   <div>
-                    <AccountTreeIcon />
+                    <FcAnswers />
                     <select onChange={(e) => setStatus(e.target.value)}>
-                      <option value="">Choose Category</option>
+                      <option value="">Choose Status</option>
                       {order.orderStatus === "Processing" && (
                         <option value="Shipped">Shipped</option>
                       )}
@@ -181,7 +183,7 @@ const ProcessOrder = ({ history, match }) => {
                       loading ? true : false || status === "" ? true : false
                     }
                   >
-                    Process
+                    Change Process
                   </Button>
                 </form>
               </div>

@@ -21,6 +21,7 @@ import {
 } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import { NEW_REVIEW_RESET } from "../../constants/productConstants";
+import { IoArrowBackCircleSharp,IoArrowForwardCircleSharp,IoBagAdd } from "react-icons/io5";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
@@ -136,15 +137,15 @@ const ProductDetails = ({ match }) => {
                 <h1>{`${product.price}$`}</h1>
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
-                    <button onClick={decreaseQuantity}>-</button>
+                    <IoArrowBackCircleSharp   style={{ height: 30, width :30}} onClick={decreaseQuantity}></IoArrowBackCircleSharp>
                     <input readOnly type="number" value={quantity} />
-                    <button onClick={increaseQuantity}>+</button>
+                    <IoArrowForwardCircleSharp style={{ height: 30, width :30 }} onClick={increaseQuantity}></IoArrowForwardCircleSharp>
                   </div>
                   <button
                     disabled={product.Stock < 1 ? true : false}
                     onClick={addToCartHandler}
                   >
-                    Add to Cart
+                   <IoBagAdd style={{ width :100}}/>
                   </button>
                 </div>
 

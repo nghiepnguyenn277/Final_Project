@@ -60,7 +60,7 @@ const UsersList = ({ history }) => {
     },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "User Name",
       minWidth: 150,
       flex: 0.5,
     },
@@ -73,15 +73,15 @@ const UsersList = ({ history }) => {
       flex: 0.3,
       cellClassName: (params) => {
         return params.getValue(params.id, "role") === "admin"
-          ? "greenColor"
-          : "redColor";
+          ? "redColor "
+          : "greenColor";
       },
     },
 
     {
       field: "actions",
-      flex: 0.3,
-      headerName: "Actions",
+      flex: 0.5,
+      headerName: "Edit/Delete",
       minWidth: 150,
       type: "number",
       sortable: false,
@@ -89,15 +89,17 @@ const UsersList = ({ history }) => {
         return (
           <Fragment>
             <Link to={`/admin/user/${params.getValue(params.id, "id")}`}>
-              <EditIcon />
+              <EditIcon style={{color: "green",height: 25, width :25 , marginTop:15}} />
             </Link>
-
+            <div style={{height: 30 , marginLeft:10}} >
+                |
+              </div>   
             <Button
               onClick={() =>
                 deleteUserHandler(params.getValue(params.id, "id"))
               }
             >
-              <DeleteIcon />
+              <DeleteIcon style={{color: "Red",height: 30, width :30}} />
             </Button>
           </Fragment>
         );
