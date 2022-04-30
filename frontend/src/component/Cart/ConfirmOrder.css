@@ -118,7 +118,7 @@
   cursor: pointer;
   transition: 0.5s;
   font-size: 15px ;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 .orderSummary > button:hover {

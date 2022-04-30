@@ -5,10 +5,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-image: linear-gradient(to right, #5dc062,#912ab9);
   position: fixed;
   top: 0%;
   left: 0;
+  
 }
 
 .searchBox > input[type="text"] {
@@ -19,7 +20,6 @@
   padding: 1vmax 2vmax;
   width: 50%;
   outline: none;
-  border-radius: 0%;
   font: 300 1.1vmax cursive;
   box-sizing: border-box;
   height: 8%;
@@ -27,19 +27,18 @@
 
 .searchBox > input[type="submit"] {
   height: 8%;
-  border-radius: 0%;
-  background-color: tomato;
+  background-color: black;
   border: none;
   padding: 1vmax;
   width: 10%;
-  font: 300 1.1vmax "Roboto";
+  font-size: 20px;
   cursor: pointer;
   color: white;
   transition: all 0.5s;
 }
 
 .searchBox > input[type="submit"]:hover {
-  background-color: rgb(55, 97, 214);
+  background-color: tomato;
 }
 
 @media screen and (max-width: 600px) {

@@ -6,10 +6,7 @@ import { clearErrors, updatePassword } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import { UPDATE_PASSWORD_RESET } from "../../constants/userConstants";
 import MetaData from "../layout/MetaData";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import LockIcon from "@material-ui/icons/Lock";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
-
+import { FcKey,FcPrivacy,FcUnlock } from "react-icons/fc";
 const UpdatePassword = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
@@ -39,7 +36,7 @@ const UpdatePassword = ({ history }) => {
     }
 
     if (isUpdated) {
-      alert.success("Profile Updated Successfully");
+      alert.success("Change password Successfully");
 
       history.push("/account");
 
@@ -58,14 +55,14 @@ const UpdatePassword = ({ history }) => {
           <MetaData title="Change Password" />
           <div className="updatePasswordContainer">
             <div className="updatePasswordBox">
-              <h2 className="updatePasswordHeading">Update Profile</h2>
+              <h2 className="updatePasswordHeading">Change Password</h2>
 
               <form
                 className="updatePasswordForm"
                 onSubmit={updatePasswordSubmit}
               >
                 <div className="loginPassword">
-                  <VpnKeyIcon />
+                  <FcKey />
                   <input
                     type="password"
                     placeholder="Old Password"
@@ -76,7 +73,7 @@ const UpdatePassword = ({ history }) => {
                 </div>
 
                 <div className="loginPassword">
-                  <LockOpenIcon />
+                  <FcUnlock />
                   <input
                     type="password"
                     placeholder="New Password"
@@ -86,7 +83,7 @@ const UpdatePassword = ({ history }) => {
                   />
                 </div>
                 <div className="loginPassword">
-                  <LockIcon />
+                  <FcPrivacy />
                   <input
                     type="password"
                     placeholder="Confirm Password"

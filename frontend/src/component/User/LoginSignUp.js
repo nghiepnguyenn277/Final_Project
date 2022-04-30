@@ -140,10 +140,6 @@ const LoginSignUp = ({ history, location }) => {
                         Register
                     </lu>
                 </div>
-                
-
-               
-            
               </form>
               <form
                 className="signUpForm"
@@ -194,10 +190,10 @@ const LoginSignUp = ({ history, location }) => {
                     onChange={registerDataChange}
                   />
                 </div>
-                <input type="submit" value="Register" className="signUpBtn" />
+                <input type="submit" value="Register" className="loginBtn" />
                 <div  onClick={(e) => switchTabs(e, "login")} className="signUpBtnt">
                     <lu>
-                        Login
+                        Login Page
                     </lu>
                 </div>
               </form>

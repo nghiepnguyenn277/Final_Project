@@ -41,7 +41,7 @@ const UsersList = ({ history }) => {
     }
 
     if (isDeleted) {
-      alert.success(message);
+      alert.success("Delete Account Successfully");
       history.push("/admin/users");
       dispatch({ type: DELETE_USER_RESET });
     }

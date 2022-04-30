@@ -13,9 +13,14 @@
 }
 
 .banner > h1 {
-  margin: 5vmax;
+  margin: 2vmax;
 
-  font: 600 2.5vmax "Roboto";
+  font-size: 90px ;
+}
+.banner > h2 {
+  margin-bottom: 2vmax;
+
+  font-size: 30px ;
 }
 
 .banner > p {

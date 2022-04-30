@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(231, 231, 231);
+  background-image: linear-gradient(to right, #5dc062,#912ab9);
   position: fixed;
   top: 0%;
   left: 0;
@@ -86,7 +86,7 @@
 }
 .signUpBtnt{
   border: none;
-  background-color: black;
+  background-color: red;
   color: white;
   font-size: 15px  ;
   width: 100%;
@@ -150,7 +150,7 @@
 .loginBtn,
 .signUpBtn {
   border: none;
-  background-color: black;
+  background-color: #0000CD ;
   color: white;
   font-size: 15px  ;
   width: 100%;
@@ -167,7 +167,7 @@
 .signUpBtn:hover,
 .signUpBtnt:hover
  {
-  background-color: rgb(179, 66, 46);
+  background-color: tomato;
 }
 
 .shiftToLeft {

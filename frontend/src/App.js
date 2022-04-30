@@ -42,7 +42,7 @@ import ProductReviews from "./component/Admin/ProductReviews";
 import Contact from "./component/layout/Contact/Contact";
 import About from "./component/layout/About/About";
 import NotFound from "./component/layout/Not Found/NotFound";
-
+import Chat from "./component/chat/Chat"
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
@@ -85,7 +85,7 @@ function App() {
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
         <Route path="/products/:keyword" component={Products} />
-
+       
         <Route exact path="/search" component={Search} />
 
         <Route exact path="/contact" component={Contact} />
@@ -190,6 +190,7 @@ function App() {
       </Switch>
 
       <Footer />
+      <Chat></Chat>
     </Router>
   );
 }

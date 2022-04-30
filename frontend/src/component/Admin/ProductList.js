@@ -16,6 +16,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import SideBar from "./Sidebar";
 import { DELETE_PRODUCT_RESET } from "../../constants/productConstants";
 
+
 const ProductList = ({ history }) => {
   const dispatch = useDispatch();
 
@@ -26,6 +27,8 @@ const ProductList = ({ history }) => {
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.product
   );
+
+ 
 
   const deleteProductHandler = (id) => {
     dispatch(deleteProduct(id));
@@ -43,8 +46,9 @@ const ProductList = ({ history }) => {
     }
 
     if (isDeleted) {
-      alert.success("Product Deleted Successfully");
-      history.push("/admin/dashboard");
+
+      alert.success("Deleted Successfully");
+      history.push("/admin/products/");
       dispatch({ type: DELETE_PRODUCT_RESET });
     }
 

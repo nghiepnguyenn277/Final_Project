@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, resetPassword } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import MetaData from "../layout/MetaData";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import LockIcon from "@material-ui/icons/Lock";
+import { FcLock,FcUnlock } from "react-icons/fc";
 
 const ResetPassword = ({ history, match }) => {
   const dispatch = useDispatch();
@@ -59,7 +58,7 @@ const ResetPassword = ({ history, match }) => {
                 onSubmit={resetPasswordSubmit}
               >
                 <div>
-                  <LockOpenIcon />
+                  <FcUnlock />
                   <input
                     type="password"
                     placeholder="New Password"
@@ -69,7 +68,7 @@ const ResetPassword = ({ history, match }) => {
                   />
                 </div>
                 <div className="loginPassword">
-                  <LockIcon />
+                  <FcLock />
                   <input
                     type="password"
                     placeholder="Confirm Password"

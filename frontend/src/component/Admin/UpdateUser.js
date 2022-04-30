@@ -85,12 +85,12 @@ const UpdateUser = ({ history, match }) => {
             >
               <h1>Update User</h1>
               <div>         
-                <h1 style={{color :"black", marginLeft:10}}><FcBusinessman  style={{height: 30 , width:30, bottom:15 }}/>:{user.name}
+                <h1 style={{color :"black", fontSize: 20 }}><FcBusinessman  style={{height: 25 , width:25,  }}/>:{user.name}
                 </h1>
               </div>
         
               <div>
-                <h1 style={{color :"black", marginLeft:10}}><AiTwotoneMail style={{height: 25, width:25, color:"green" }}/>:{user.email}</h1>
+                <h1 style={{color :"black", fontSize: 19 }}><AiTwotoneMail style={{height: 20, width:20, color:"green" }}/>:{user.email}</h1>
               </div>
 
               <div>

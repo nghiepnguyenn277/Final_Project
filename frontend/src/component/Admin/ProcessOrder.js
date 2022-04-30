@@ -183,7 +183,7 @@ const ProcessOrder = ({ history, match }) => {
                       loading ? true : false || status === "" ? true : false
                     }
                   >
-                    Change Process
+                   Change the status of goods 
                   </Button>
                 </form>
               </div>
